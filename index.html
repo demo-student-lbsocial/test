@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Summary — Data Collection, Analysis & Visualization</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height:1.6; margin: 2rem; color: #222 }
+    header { border-bottom: 1px solid #eee; margin-bottom: 1rem }
+    h1 { margin: 0; font-size: 1.6rem }
+    section { margin-top: 1rem }
+    code { background: #f5f5f5; padding: 0.1rem 0.3rem; border-radius: 3px }
+    .files { background: #fafafa; padding: 0.8rem; border-radius: 6px; border: 1px solid #f0f0f0 }
+    ul { margin: 0.4rem 0 0 1.2rem }
+    .muted { color: #666; font-size: 0.95rem }
+    footer { border-top: 1px solid #eee; margin-top: 2rem; padding-top: 0.6rem; color: #666 }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📊 Project Summary — Data Collection, Analysis & Visualization</h1>
+    <p class="muted">A concise overview of what was done, why, and how to reproduce it.</p>
+  </header>
+
+  <section>
+    <h2>💡 Overview</h2>
+    <p>This repository collects social data, builds a network, computes network metrics, and visualizes the results. The summary below points to the scripts, notebook, and output files used in the workflow.</p>
+  </section>
+
+  <section>
+    <h2>🔍 Data Collection</h2>
+    <ul>
+      <li><code>scripts/fetch_tweets.py</code> — script to collect social data (e.g., tweets). See the script for required credentials and filters.</li>
+      <li>Output from collection typically goes into <code>outputs/</code> (check the script to confirm exact filenames).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧮 Data Processing & Analysis</h2>
+    <ul>
+      <li><code>scripts/analyze_network.py</code> — builds network graph, computes metrics, and exports graph files (e.g., <code>outputs/network.graphml</code>).</li>
+      <li><code>scripts/verify_count.py</code> — small verification utilities and sanity checks for collected/processed data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📊 Visualization</h2>
+    <ul>
+      <li><code>notebooks/network_visualization.ipynb</code> — Jupyter notebook with interactive visualization steps and plots.</li>
+      <li><code>outputs/network.graphml</code> — exported graph file; open with Gephi, Cytoscape, or network analysis tools for further visualization.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⚙️ Reproduce the Workflow</h2>
+    <ol>
+      <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+      <li>Collect data: <code>python scripts/fetch_tweets.py</code> — ensure any required API keys or environment variables are set.</li>
+      <li>Analyze: <code>python scripts/analyze_network.py</code></li>
+      <li>Open visualizations: run or open <code>notebooks/network_visualization.ipynb</code> (or load <code>outputs/network.graphml</code> in Gephi/Cytoscape).</li>
+    </ol>
+    <p class="muted">Tip: If a step depends on external credentials, see the header of the corresponding script for instructions.</p>
+  </section>
+
+  <section>
+    <h2>📁 Files of Interest</h2>
+    <div class="files">
+      <ul>
+        <li><code>scripts/fetch_tweets.py</code></li>
+        <li><code>scripts/analyze_network.py</code></li>
+        <li><code>scripts/verify_count.py</code></li>
+        <li><code>notebooks/network_visualization.ipynb</code></li>
+        <li><code>outputs/network.graphml</code></li>
+        <li><code>requirements.txt</code></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>📝 Notes & Next Steps</h2>
+    <ul>
+      <li>Consider adding a <code>data/README.md</code> describing raw/processed file naming conventions.</li>
+      <li>Add a small shell or Makefile to automate reproduction (fetch → analyze → notebook run).</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Last updated: 2025-12-18</p>
+  </footer>
+</body>
+</html>
