@@ -77,7 +77,36 @@
   </section>
 
   <section>
-    <h2>📝 Notes & Next Steps</h2>
+    <h2>� Visualizations & Analysis Results</h2>
+    <p>Below is the primary network visualization and a short summary of computed metrics (generated from <code>outputs/network.graphml</code>).</p>
+    <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap;">
+      <div style="flex:1 1 480px;max-width:720px;">
+        <img src="outputs/network.png" alt="Network visualization" style="width:100%;height:auto;border:1px solid #eee;border-radius:6px" />
+        <p class="muted">Figure: network visualization (image: <code>outputs/network.png</code>).</p>
+      </div>
+      <div style="flex:1 1 240px;min-width:240px;">
+        <h3>Summary</h3>
+        <ul>
+          <li><strong>Nodes:</strong> 118</li>
+          <li><strong>Edges:</strong> 109</li>
+          <li><strong>Avg degree:</strong> 1.85</li>
+          <li><strong>Connected components:</strong> 25</li>
+        </ul>
+        <h4>Top 5 nodes by degree</h4>
+        <ol>
+          <li>laratlarian — 20</li>
+          <li>allisonperryart — 7</li>
+          <li>rec_a_dork — 5</li>
+          <li>commanderredexe — 5</li>
+          <li>roastchicken3d — 5</li>
+        </ol>
+        <p class="muted">Tip: regenerate results by running <code>python scripts/analyze_network.py --save outputs/network.graphml --image outputs/network.png</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>�📝 Notes & Next Steps</h2>
     <ul>
       <li>Consider adding a <code>data/README.md</code> describing raw/processed file naming conventions.</li>
       <li>Add a small shell or Makefile to automate reproduction (fetch → analyze → notebook run).</li>
